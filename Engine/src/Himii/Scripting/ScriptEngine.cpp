@@ -209,6 +209,57 @@ namespace Himii {
         }
     }
 
+    void ScriptEngine::ReloadAssembly()
+    {
+        // 1. Compile GameAssembly
+        // Find path to GameAssembly.csproj.
+        // We assume we are in bin directory.
+        // Or we assume the user is running from the root project dir?
+        // Let's assume standard layout.
+
+        // This command builds the project.
+        // NOTE: In a real engine, we would want to capture output.
+        std::cout << "[ScriptEngine] Compiling GameAssembly..." << std::endl;
+        // Adjust path as needed.
+        // Assuming current directory contains HimiiEditor/GameAssembly.csproj if run from root
+        // Or ../../../HimiiEditor/GameAssembly.csproj if run from bin/debug/net8.0
+
+        // For now, let's try to find it or hardcode relative path from expected working dir
+        // If we run from project root:
+        const char* buildCommand = "dotnet build HimiiEditor/GameAssembly.csproj -c Debug";
+
+        int result = std::system(buildCommand);
+        if (result != 0)
+        {
+            std::cerr << "[ScriptEngine] Compilation failed!" << std::endl;
+            return;
+        }
+
+        // 2. Load the new assembly
+        // The output path is defined in GameAssembly.csproj
+        // <OutputPath>Assets/Bin</OutputPath> -> relative to csproj? No, it's relative to project file.
+        // So HimiiEditor/Assets/Bin/GameAssembly.dll
+
+        // But wait, GameAssembly.csproj has: <OutputPath>Assets/Bin</OutputPath>
+        // If we build HimiiEditor/GameAssembly.csproj, output is HimiiEditor/Assets/Bin/net8.0/GameAssembly.dll
+
+        std::filesystem::path assemblyPath = "HimiiEditor/Assets/Bin/net8.0/GameAssembly.dll";
+        if (!std::filesystem::exists(assemblyPath))
+        {
+             // Try absolute path if relative failed
+             assemblyPath = std::filesystem::current_path() / "HimiiEditor/Assets/Bin/net8.0/GameAssembly.dll";
+        }
+
+        if (std::filesystem::exists(assemblyPath))
+        {
+            LoadAppAssembly(assemblyPath);
+        }
+        else
+        {
+             std::cerr << "[ScriptEngine] Could not find compiled assembly at: " << assemblyPath << std::endl;
+        }
+    }
+
     void ScriptEngine::OnRuntimeStart(Scene* scene)
     {
         s_SceneContext = scene;

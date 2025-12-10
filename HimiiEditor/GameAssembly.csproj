@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<Reference Include="ScriptCore">
-			<HintPath>path/to/ScriptCore.dll</HintPath>
+			<HintPath>../ScriptCore/bin/Debug/net8.0/ScriptCore.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

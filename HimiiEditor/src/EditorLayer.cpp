@@ -8,6 +8,8 @@
 #include "Himii/Utils/PlatformUtils.h"
 #include "ImGuizmo.h"
 
+#include "Himii/Scripting/ScriptEngine.h"
+
 namespace Himii
 {
     extern const std::filesystem::path s_AssetsPath;
@@ -547,6 +549,9 @@ namespace Himii
             OnSceneStop();
 
         m_SceneState = SceneState::Play;
+
+        // Recompile and reload scripts
+        ScriptEngine::ReloadAssembly();
 
         m_ActiveScene = Scene::Copy(m_EditorScene);
         m_ActiveScene->OnRuntimeStart();

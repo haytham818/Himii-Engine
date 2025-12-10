@@ -18,6 +18,7 @@ namespace Himii {
 
 		static void LoadAssembly(const std::filesystem::path& filepath);
 		static void LoadAppAssembly(const std::filesystem::path& filepath);
+        static void ReloadAssembly();
 
 		// 运行时生命周期
         static void OnRuntimeStart(Scene* scene);

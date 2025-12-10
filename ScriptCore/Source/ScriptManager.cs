@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Loader;
 using System.Linq;
 
 namespace Himii
@@ -15,6 +16,9 @@ namespace Himii
         // 缓存所有继承自 Entity 的类型: TypeName -> Type
         private static Dictionary<string, Type> _entityClasses = new Dictionary<string, Type>();
 
+        // Store the load context to unload it later
+        private static AssemblyLoadContext _loadContext;
+
         [UnmanagedCallersOnly]
         public static void LoadGameAssembly(IntPtr assemblyPathPtr)
         {
@@ -23,25 +27,37 @@ namespace Himii
 
             try
             {
-                // 加载用户的 DLL
-                // 注意：在 .NET Core 中，重复加载同名程序集需要 AssemblyLoadContext，这里简化处理，假设每次都是新的或通过 ALC 处理
-                Assembly gameAssembly = Assembly.LoadFrom(assemblyPath);
-
-                _entityClasses.Clear();
-
-                // 扫描 ScriptCore (自身) 和 GameAssembly 中的所有 Entity 子类
-                var assemblies = new List<Assembly> { typeof(ScriptManager).Assembly, gameAssembly };
-
-                foreach (var asm in assemblies)
+                if (_loadContext != null)
                 {
-                    foreach (var type in asm.GetTypes())
+                    _instances.Clear();
+                    _entityClasses.Clear();
+                    _loadContext.Unload();
+                    _loadContext = null;
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                }
+
+                _loadContext = new AssemblyLoadContext("GameAssembly", true);
+
+                // Load from stream to avoid locking the file
+                using (var stream = File.OpenRead(assemblyPath))
+                {
+                    Assembly gameAssembly = _loadContext.LoadFromStream(stream);
+
+                     // 扫描 ScriptCore (自身) 和 GameAssembly 中的所有 Entity 子类
+                    var assemblies = new List<Assembly> { typeof(ScriptManager).Assembly, gameAssembly };
+
+                    foreach (var asm in assemblies)
                     {
-                        if (type.IsSubclassOf(typeof(Entity)) && !type.IsAbstract)
+                        foreach (var type in asm.GetTypes())
                         {
-                            // Key 存储为 "Namespace.ClassName"
-                            string fullName = type.FullName;
-                            _entityClasses[fullName] = type;
-                            Console.WriteLine($"[C#] Found Entity Class: {fullName}");
+                            if (type.IsSubclassOf(typeof(Entity)) && !type.IsAbstract)
+                            {
+                                // Key 存储为 "Namespace.ClassName"
+                                string fullName = type.FullName;
+                                _entityClasses[fullName] = type;
+                                Console.WriteLine($"[C#] Found Entity Class: {fullName}");
+                            }
                         }
                     }
                 }

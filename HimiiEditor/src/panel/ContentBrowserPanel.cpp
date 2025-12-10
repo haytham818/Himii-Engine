@@ -62,7 +62,17 @@ namespace Himii
                 {
                     m_CurrentDirectory /= path.filename();
                 }
-                
+                else
+                {
+                     // Open file if it is a script
+                     // Use system command to open the file with default editor
+                     #ifdef WIN32
+                         std::string command = "start \"\" \"" + path.string() + "\"";
+                     #else
+                         std::string command = "xdg-open \"" + path.string() + "\"";
+                     #endif
+                     std::system(command.c_str());
+                }
             }
             ImGui::TextWrapped(fileNameString.c_str());
             ImGui::PopID();
