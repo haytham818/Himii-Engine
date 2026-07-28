@@ -1,0 +1,2461 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="HimiiEngine 官方文档——用户手册、教程、脚本 API 与开发者指南">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../UserManual/GettingStarted/">
+      
+      
+        
+          <link rel="alternate" href="https://himiifish.com" hreflang="zh">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>开发路线图 - HimiiEngine 引擎文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Microsoft+YaHei:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Microsoft YaHei";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="HimiiEngine 引擎文档" class="md-header__button md-logo" aria-label="HimiiEngine 引擎文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HimiiEngine 引擎文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              开发路线图
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="切换到浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://himiifish.com" hreflang="zh" class="md-select__link">
+              Himii Fish 个人站
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/HimiiFish/Himii-Engine" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Himii-Engine
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UserManual/GettingStarted/" class="md-tabs__link">
+          
+  
+  
+  快速开始
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UserManual/" class="md-tabs__link">
+          
+  
+  
+  用户手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UserManual/Tutorial2DPlatformer/" class="md-tabs__link">
+          
+  
+  
+  教程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../UserManual/ScriptingAPI/" class="md-tabs__link">
+          
+  
+  
+  脚本 API 参考
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../DevManual/" class="md-tabs__link">
+          
+  
+  
+  开发手册
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../releases/v1.0.0-alpha/" class="md-tabs__link">
+          
+  
+  
+  发布说明
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HimiiEngine 引擎文档" class="md-nav__button md-logo" aria-label="HimiiEngine 引擎文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HimiiEngine 引擎文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/HimiiFish/Himii-Engine" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Himii-Engine
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关于
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    关于
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文档首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发路线图
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发路线图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📅 已完成特性 (Phase 1: Foundation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📅 已完成特性 (Phase 1: Foundation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：基础架构 (Core Architecture)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：渲染系统 (Renderer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physics-2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：物理系统 (Physics 2D)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：脚本系统 (Scripting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editor-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：编辑器 (Editor Interface)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：游戏性与脚本（Phase 1 已落地部分）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：发布 (Distribution)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-a2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase A：2D 能力闭环（当前冲刺 · 已冻结）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Phase A：2D 能力闭环（当前冲刺 · 已冻结）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实施顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轨 1：场景结构与 UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轨 2：音频
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        收束：发布管线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A 明确排除（本阶段不做、不算进度）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Phase B 及以后（未冻结 · 仅占位）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Phase B 及以后（未冻结 · 仅占位）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        渲染增强 / 粒子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理 3D
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编辑器与内容管线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可能的后续方向（仅备忘）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    快速开始
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/GettingStarted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    快速开始
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    用户手册
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户手册总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/EditorFeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编辑器与功能
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/EditorInterface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编辑器界面
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/SpriteAnimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D 逐帧动画
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/Physics2D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D 物理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/ScriptWorkflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    脚本工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/Character2D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D 角色工作流（索引）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    教程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    教程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/Tutorial2DPlatformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2D 平台跳跃
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    脚本 API 参考
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    脚本 API 参考
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UserManual/ScriptingAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    脚本 API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发手册
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    开发手册
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevManual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    开发者手册总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevManual/BuildingFromSource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    源码构建
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevManual/Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架构概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevManual/CoreSystems/Serialization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    场景序列化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    发布说明
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    发布说明
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/v1.0.0-alpha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    v1.0.0 Alpha
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📅 已完成特性 (Phase 1: Foundation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📅 已完成特性 (Phase 1: Foundation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：基础架构 (Core Architecture)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：渲染系统 (Renderer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physics-2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：物理系统 (Physics 2D)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：脚本系统 (Scripting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editor-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：编辑器 (Editor Interface)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：游戏性与脚本（Phase 1 已落地部分）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        核心模块：发布 (Distribution)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-a2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase A：2D 能力闭环（当前冲刺 · 已冻结）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Phase A：2D 能力闭环（当前冲刺 · 已冻结）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实施顺序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轨 1：场景结构与 UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        轨 2：音频
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        收束：发布管线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A 明确排除（本阶段不做、不算进度）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Phase B 及以后（未冻结 · 仅占位）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Phase B 及以后（未冻结 · 仅占位）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        渲染增强 / 粒子
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理 3D
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编辑器与内容管线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        可能的后续方向（仅备忘）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">开发路线图</h1>
+<p>本文档采用 <strong>核心模块 - 最小执行单元</strong> 的结构对应当下的开发进度与未来的规划。</p>
+<p><strong>Phase A 定位（已冻结）</strong>：继续深耕 <strong>纯 2D</strong>；以 <strong>能力清单打勾</strong> 为验收标准（不绑定某款样板游戏）。<br />
+<strong>实施顺序</strong>：轨 1（场景结构）与轨 2（音频）并行，最后收束发布管线。</p>
+<hr />
+<h2 id="phase-1-foundation">📅 已完成特性 (Phase 1: Foundation)</h2>
+<h3 id="core-architecture">核心模块：基础架构 (Core Architecture)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Application Loop</strong></td>
+<td style="text-align: left;">实现应用启动、主循环、关闭流程</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>LayerStack</strong></td>
+<td style="text-align: left;">实现层的压栈、弹栈与遍历更新</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Window Abstraction</strong></td>
+<td style="text-align: left;">基于 GLFW 封装跨平台窗口创建与上下文管理</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Event System</strong></td>
+<td style="text-align: left;">实现键盘、鼠标、窗口事件的分发与回调</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Log System</strong></td>
+<td style="text-align: left;">集成 organic spdlog 日志库</td>
+</tr>
+</tbody>
+</table>
+<h3 id="renderer">核心模块：渲染系统 (Renderer)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>OpenGL Context</strong></td>
+<td style="text-align: left;">集成 GLAD 并管理 OpenGL 上下文</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Shader Class</strong></td>
+<td style="text-align: left;">着色器的加载、编译与链接</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Buffer System</strong></td>
+<td style="text-align: left;">VertexBuffer, IndexBuffer, VertexArray 的抽象与实现</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Texture System</strong></td>
+<td style="text-align: left;">2D 纹理加载与绑定 (stb_image)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Orthographic Camera</strong></td>
+<td style="text-align: left;">正交相机控制器</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Batch Renderer</strong></td>
+<td style="text-align: left;">2D 批处理渲染 (自动合并 DrawCall)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Framebuffer</strong></td>
+<td style="text-align: left;">离屏渲染支持 (仅颜色附件)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>SubTexture2D</strong></td>
+<td style="text-align: left;">纹理图集切片支持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="physics-2d">核心模块：物理系统 (Physics 2D)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Box2D World</strong></td>
+<td style="text-align: left;">物理世界初始化与步进 (Step)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Rigidbody2D</strong></td>
+<td style="text-align: left;">刚体组件属性同步 (Transform &lt;-&gt; Box2D Body)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>BoxCollider2D</strong></td>
+<td style="text-align: left;">矩形碰撞体与夹具 (Fixture) 创建</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Collision Events 2D</strong></td>
+<td style="text-align: left;"><code>OnCollisionEnter2D</code> / <code>OnCollisionExit2D</code> 脚本回调</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scripting">核心模块：脚本系统 (Scripting)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>CoreCLR Host</strong></td>
+<td style="text-align: left;">.NET 8 + 可收集 AssemblyLoadContext（非 Mono）</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Script Class</strong></td>
+<td style="text-align: left;">C# 类加载与实例化（OnCreate / OnUpdate / OnDestroy）</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Internal Calls</strong></td>
+<td style="text-align: left;">C++ 与 C# 互操作绑定</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Input API</strong></td>
+<td style="text-align: left;">C# <code>Input.IsKeyDown</code> 等接口</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Script Fields</strong></td>
+<td style="text-align: left;">Inspector 公开字段读写与 YAML 序列化（含 Entity 引用）</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Async Compile</strong></td>
+<td style="text-align: left;"><code>dotnet build</code> 异步编译与文件监视</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Script Console</strong></td>
+<td style="text-align: left;">编译日志面板，错误行跳转 IDE</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>IDE Launcher</strong></td>
+<td style="text-align: left;">全局/项目 IDE 配置（VS / VS Code / Rider / Custom）</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Script Log API</strong></td>
+<td style="text-align: left;">C# <code>Log.Info</code> / <code>Warning</code> / <code>Error</code>，经 C++ <code>Log::PrintMessage</code> 输出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="editor-interface">核心模块：编辑器 (Editor Interface)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>DockSpace</strong></td>
+<td style="text-align: left;">全屏停靠布局支持</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Scene Viewport</strong></td>
+<td style="text-align: left;">场景编辑视口 (渲染 FBO 纹理)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Hierarchy Panel</strong></td>
+<td style="text-align: left;">实体层级树状列表</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Properties Panel</strong></td>
+<td style="text-align: left;">组件属性检视与修改</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Content Browser</strong></td>
+<td style="text-align: left;">资源文件浏览与拖拽</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>ImGuizmo</strong></td>
+<td style="text-align: left;">视口内物体变换 Gizmo</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Editor Preferences</strong></td>
+<td style="text-align: left;">全局编辑器设置（含默认脚本 IDE）</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Project Settings</strong></td>
+<td style="text-align: left;">项目级 IDE 覆盖与 <code>.hproj</code> 序列化</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Console Panel</strong></td>
+<td style="text-align: left;">运行时脚本日志 ImGui 面板（<code>Window → Console</code>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-1">核心模块：游戏性与脚本（Phase 1 已落地部分）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Prefab System（基础）</strong></td>
+<td style="text-align: left;">单实体 <code>.hprefab</code> 保存与实例化（无实例覆盖）</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Scene Transition（基础）</strong></td>
+<td style="text-align: left;"><code>SceneManager.LoadScene</code> + <code>ActiveScenePath</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>[SerializeField]</strong></td>
+<td style="text-align: left;">ScriptCore 提供特性；private 字段 Inspector 显示与场景序列化</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Undo/Redo</strong></td>
+<td style="text-align: left;">命令模式；Transform、Hierarchy 等操作已接入</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Project Packager（基础）</strong></td>
+<td style="text-align: left;">已被完整 <strong>Build Pipeline</strong> 取代；历史：编辑器 File → Build Project 扁平拷贝 Runtime / 资源</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distribution">核心模块：发布 (Distribution)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Runtime Application</strong></td>
+<td style="text-align: left;"><code>HimiiRuntime</code> 剥离编辑器的游戏运行程序</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-a2d">🎯 Phase A：2D 能力闭环（当前冲刺 · 已冻结）</h2>
+<p>验收方式：<strong>下列最小执行单元全部勾选即算 Phase A 完成</strong>（不以某款游戏发行为门槛）。</p>
+<h3 id="_2">实施顺序</h3>
+<ol>
+<li><strong>轨 1 — 场景结构</strong>：实体父子层级 → 多实体 Prefab → Canvas（含 Scaler）→ UIButton  </li>
+<li><strong>轨 2 — 音频</strong>（与轨 1 并行）：<code>AudioEngine</code> + miniaudio → <code>SoundAsset</code> / 非空间化 <code>SoundPlayer</code> + C# / 编辑器  </li>
+<li><strong>收束 — 发布</strong>：完整 Build Pipeline（在功能稳定后进行）</li>
+</ol>
+<h3 id="1-ui">轨 1：场景结构与 UI</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">预期内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Entity Parent Hierarchy</strong></td>
+<td style="text-align: left;">只存 <code>Parent</code> 为唯一真相；Children 运行时重建/缓存；Hierarchy 显示为树</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Local Transform</strong></td>
+<td style="text-align: left;"><code>TransformComponent</code> 的 Position/Rotation/Scale 语义改为 <strong>Local</strong>；世界矩阵由父链计算（可缓存）；字段名暂不强制重命名</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Multi-Entity Prefab</strong></td>
+<td style="text-align: left;">利用父子层级序列化一组实体为 <code>.hprefab</code>；<strong>不做</strong>实例属性覆盖 / 变体 / Prefab 嵌套覆盖</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Canvas (Screen Space Overlay)</strong></td>
+<td style="text-align: left;">引入 Canvas（或等价 UI 根）；至少支持 Screen Space Overlay</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Canvas Scaler</strong></td>
+<td style="text-align: left;">参考分辨率自适应；无 Scaler 则 Canvas 不算完成</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>UIButton（最小）</strong></td>
+<td style="text-align: left;">挂在 Canvas 子树下；点击回调（按下/悬停/点击）；不做通用布局系统</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">轨 2：音频</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">预期内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>AudioEngine Abstraction</strong></td>
+<td style="text-align: left;">引擎侧音频接口抽象；首期后端为 <strong>miniaudio</strong>（解码与设备）；预留更换中间件的可能</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>SoundAsset</strong></td>
+<td style="text-align: left;">可引用音频资产（WAV / OGG / MP3）；一律解码进内存；<code>AssetHandle</code> 体系</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>SoundPlayer（非空间化）</strong></td>
+<td style="text-align: left;">Play / Stop / Pause、Loop、Volume、Mute、PlayOnStart、PlayOneShot；最多 32 voice（超限优先丢弃新 OneShot）；<strong>不做</strong> 空间衰减 / Listener / Mixer</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Audio C# API</strong></td>
+<td style="text-align: left;">ScriptCore <code>SoundPlayer</code> 组件可驱动上述播放控制</td>
+</tr>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Audio Editor</strong></td>
+<td style="text-align: left;">Inspector（含 Preview）、Content Browser 导入；仅 Play/Runtime 自动出声，Stop 时全部立刻停止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">收束：发布管线</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">预期内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[x]</td>
+<td style="text-align: left;"><strong>Build Pipeline</strong></td>
+<td style="text-align: left;">编辑器一键输出可运行目录树：统一配置、<strong>瘦</strong> <code>engine.hpck</code>、项目 <code>assets</code> 全量、资源校验、Runtime / 依赖 / <code>GameAssembly</code>；Editor 与 Templates 双 hpck 分层；缺关键文件则 Build 失败并报错。不要求干净机器冒烟或自动拉起 Runtime</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-a">Phase A 明确排除（本阶段不做、不算进度）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">类别</th>
+<th style="text-align: left;">排除项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">渲染 / 物理</td>
+<td style="text-align: left;">Directional/Point Shadow、Bloom、Post-Processing Stack、3D 物理（Jolt/PhysX 等）</td>
+</tr>
+<tr>
+<td style="text-align: left;">游戏性</td>
+<td style="text-align: left;">玩家存档 Save/Load、Prefab 实例覆盖/变体、音频空间化</td>
+</tr>
+<tr>
+<td style="text-align: left;">工具链</td>
+<td style="text-align: left;">统一 Asset Importer、Console 增强、粒子系统收尾</td>
+</tr>
+<tr>
+<td style="text-align: left;">其他</td>
+<td style="text-align: left;">网络、骨骼动画、Job System、Vulkan 后端落地</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="phase-b">🚀 Phase B 及以后（未冻结 · 仅占位）</h2>
+<p>以下条目在 Phase A 完成前 <strong>不计入当前冲刺</strong>；排序与范围将在 Phase A 验收后另行冻结。</p>
+<h3 id="_4">渲染增强 / 粒子</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">预期内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Directional Shadow</strong></td>
+<td style="text-align: left;">级联阴影贴图 (CSM)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Point Shadow</strong></td>
+<td style="text-align: left;">全向阴影 (CubeMap)</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Bloom</strong></td>
+<td style="text-align: left;">泛光后处理特效</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Post-Processing Stack</strong></td>
+<td style="text-align: left;">ToneMapping、Gamma Correction 等</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Particle System</strong></td>
+<td style="text-align: left;">GPU/CPU 粒子可用化（编辑器已有基础）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3d">物理 3D</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">预期内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Physics Engine Integration</strong></td>
+<td style="text-align: left;">集成 Jolt Physics 或 PhysX</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Sphere / Capsule / Mesh Collider</strong></td>
+<td style="text-align: left;">3D 碰撞组件</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Physics Debug Draw</strong></td>
+<td style="text-align: left;">线框可视化调试</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">编辑器与内容管线</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">状态</th>
+<th style="text-align: left;">最小执行单元 (Minimum Execution Unit)</th>
+<th style="text-align: left;">预期内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Asset Importer</strong></td>
+<td style="text-align: left;">统一的资源导入设置面板</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ]</td>
+<td style="text-align: left;"><strong>Console 增强</strong></td>
+<td style="text-align: left;">日志过滤/搜索/复制；默认展示引擎日志等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">可能的后续方向（仅备忘）</h3>
+<ul>
+<li>Prefab 实例覆盖 / 变体；2D 空间音频；玩家存档 API  </li>
+<li>更完整的 UI 布局系统；Job System；Vulkan 后端  </li>
+<li>网络、骨骼动画、AI（按产品需求再开）</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
